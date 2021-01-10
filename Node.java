@@ -1,8 +1,8 @@
-public class Node{
+public class Node {
   private String data;
   private Node next,prev;
 
-  public Node(String value){
+  public Node(String value) {
     data = value;
     prev = null;
     next = null;
@@ -10,7 +10,10 @@ public class Node{
  //write get/set methods for all three instance variables.
 
  //get methods
-  public String getData(){
+  public String getData() {
     return data;
+  }
+  public Node getPrev() {
+    return prev;
   }
 }
