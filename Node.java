@@ -8,4 +8,9 @@ public class Node{
     next = null;
   }
  //write get/set methods for all three instance variables.
+
+ //get methods
+  public String getData(){
+    return data;
+  }
 }
