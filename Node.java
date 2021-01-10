@@ -16,4 +16,7 @@ public class Node {
   public Node getPrev() {
     return prev;
   }
+  public Node getNext() {
+    return next;
+  }
 }
