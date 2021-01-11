@@ -1,19 +1,19 @@
 public class MyLinkedList{
- private int size;
- private Node start,end;
+  private int size;
+  private Node start,end;
 
- public MyLinkedList() {
+  public MyLinkedList() {
    size = 0;
    start = null;
    end = null;
- }
+  }
 
- public int size() {
+  public int size() {
    return size;
- }
+  }
 
- //Getting node from index
- private Node getNodeFromIndex(int index) {
+  //Getting node from index
+  private Node getNodeFromIndex(int index) {
    if (index < 0 || index >= size()) {
      throw new IndexOutOfBoundsException();
    }
@@ -22,9 +22,9 @@ public class MyLinkedList{
      current = current.getNext();
    }
    return current;
- }
+  }
 
- public boolean add(String value) {
+  public boolean add(String value) {
    Node nodeToAdd = new Node(value);
    if (size() == 0) {
      start = nodeToAdd;
@@ -36,9 +36,9 @@ public class MyLinkedList{
    size++;
    end = nodeToAdd;
    return true;
- }
+  }
 
- public void add(int index, String value) {
+  public void add(int index, String value) {
    Node nodeToAdd = new Node(value);
    //If outside range
    if (index < 0 || index > size()) {
@@ -71,17 +71,17 @@ public class MyLinkedList{
      next.setPrev(nodeToAdd);
    }
    size++;
- }
+  }
 
- public String get(int index) {
+  public String get(int index) {
    if (index < 0 || index >= size()) {
      throw new IndexOutOfBoundsException();
    }
    Node valueHere = getNodeFromIndex(index);
    return valueHere.getData();
- }
+  }
 
- public String set(int index, String value) {
+  public String set(int index, String value) {
    if (index < 0 || index >= size()) {
      throw new IndexOutOfBoundsException();
    }
@@ -89,9 +89,9 @@ public class MyLinkedList{
    String oldValue = nodeToUpdate.getData();
    nodeToUpdate.setData(value);
    return value;
- }
+  }
 
- public String toString() {
+  public String toString() {
    if (size() == 0) {
      return "[]";
    }
@@ -108,9 +108,9 @@ public class MyLinkedList{
      }
    }
    return toReturn;
- }
+  }
 
- public String remove(int index) {
+  public String remove(int index) {
    if (index < 0 || index >= size()) {
      throw new IndexOutOfBoundsException();
    }
@@ -140,6 +140,13 @@ public class MyLinkedList{
    }
    size--;
    return removedData;
- }
-
+  }
+ /*
+*@postcondition: All of the elements from other are removed from the other, and connected to the end of this linked list.
+*@postcondition: The size of other is reduced to 0.
+*@postcondition: The size of this is now the combined sizes of both original lists
+*/
+  public void extend(MyLinkedList other){
+    
+  }
 }
