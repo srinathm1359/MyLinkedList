@@ -15,7 +15,7 @@ public class MyLinkedList{
  //Getting node from index
  private Node getNodeFromIndex(int index) {
    if (index < 0 || index >= size()) {
-     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size() - 1) + ", inclusive!");
+     throw new IndexOutOfBoundsException();
    }
    Node current = start;
    for (int i = 0; i < index; i++) {
@@ -42,7 +42,7 @@ public class MyLinkedList{
    Node nodeToAdd = new Node(value);
    //If outside range
    if (index < 0 || index > size()) {
-     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size()) + ", inclusive!");
+     throw new IndexOutOfBoundsException();
    }
    //If at end
    else if (index == size()) {
@@ -75,7 +75,7 @@ public class MyLinkedList{
 
  public String get(int index) {
    if (index < 0 || index >= size()) {
-     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size() - 1) + ", inclusive!");
+     throw new IndexOutOfBoundsException();
    }
    Node valueHere = getNodeFromIndex(index);
    return valueHere.getData();
@@ -83,7 +83,7 @@ public class MyLinkedList{
 
  public String set(int index, String value) {
    if (index < 0 || index >= size()) {
-     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size() - 1) + ", inclusive!");
+     throw new IndexOutOfBoundsException();
    }
    Node nodeToUpdate = getNodeFromIndex(index);
    String oldValue = nodeToUpdate.getData();
