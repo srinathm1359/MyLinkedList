@@ -31,5 +31,12 @@ public class BasicTester{
 
     System.out.println("Your result:\n"+words+" "+words.size());
     System.out.println("expected:\n[head, 0x, 0, 1x, 1, 2x, 2, 3x, 3, 4x, 4, 5x, 5, 6x, 6, 7x, 7, 8x, 8, 9x, 9, tail] 22");
+    //Test remove
+    words.remove(2);
+    System.out.println(words + " " + words.size());
+    words.remove(0);
+    System.out.println(words + " " + words.size());
+    words.remove(words.size() - 1);
+    System.out.println(words + " " + words.size());
   }
 }
