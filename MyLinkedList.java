@@ -110,4 +110,36 @@ public class MyLinkedList{
    return toReturn;
  }
 
+ public String remove(int index) {
+   if (index < 0 || index >= size()) {
+     throw new IndexOutOfBoundsException();
+   }
+   String removedData = get(index);
+   if (size() == 1) {
+     start = null;
+     end = null;
+   }
+   else if (index == 0) {
+     Node toRemove = start;
+     Node next = toRemove.getNext();
+     next.setPrev(null);
+     start = next;
+   }
+   else if (index == size() - 1) {
+     Node toRemove = end;
+     Node prev = toRemove.getPrev();
+     prev.setNext(null);
+     end = prev;
+   }
+   else {
+     Node toRemove = getNodeFromIndex(index);
+     Node next = toRemove.getNext();
+     Node prev = toRemove.getPrev();
+     next.setPrev(prev);
+     prev.setNext(next);
+   }
+   size--;
+   return removedData;
+ }
+
 }
