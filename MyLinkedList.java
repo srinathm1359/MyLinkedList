@@ -147,6 +147,14 @@ public class MyLinkedList{
 *@postcondition: The size of this is now the combined sizes of both original lists
 */
   public void extend(MyLinkedList other){
-    
+    Node otherStart = other.start;
+    Node otherEnd = other.end;
+    end.setNext(otherStart);
+    otherStart.setPrev(end);
+    end = otherEnd;
+    size += other.size();
+    otherStart = null;
+    otherEnd = null;
+    other.size = 0;
   }
 }
