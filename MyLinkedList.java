@@ -80,9 +80,17 @@ public class MyLinkedList{
    Node valueHere = getNodeFromIndex(index);
    return valueHere.getData();
  }
+
+ public String set(int index, String value) {
+   if (index < 0 || index >= size()) {
+     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size() - 1) + ", inclusive!");
+   }
+   Node nodeToUpdate = getNodeFromIndex(index);
+   String oldValue = nodeToUpdate.getData();
+   nodeToUpdate.setData(value);
+   return value;
+ }
  /*
- public String set(int index, String value);
  public String toString();
  */
- //Any helper method that returns a Node object MUST BE PRIVATE!
 }
