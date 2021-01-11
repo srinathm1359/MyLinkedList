@@ -15,7 +15,7 @@ public class MyLinkedList{
  //Getting node from index
  private Node getNodeFromIndex(int index) {
    if (index < 0 || index >= size()) {
-     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size()) + ", inclusive!");
+     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size() - 1) + ", inclusive!");
    }
    Node current = start;
    for (int i = 0; i < index; i++) {
@@ -72,8 +72,15 @@ public class MyLinkedList{
    }
    size++;
  }
+
+ public String get(int index) {
+   if (index < 0 || index >= size()) {
+     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size() - 1) + ", inclusive!");
+   }
+   Node valueHere = getNodeFromIndex(index);
+   return valueHere.getData();
+ }
  /*
- public String get(int index);
  public String set(int index, String value);
  public String toString();
  */
