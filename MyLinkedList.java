@@ -34,7 +34,7 @@ public class MyLinkedList{
      end.setNext(nodeToAdd);
    }
    size++;
-   end = newNode;
+   end = nodeToAdd;
    return true;
  }
 
@@ -53,7 +53,7 @@ public class MyLinkedList{
        nodeToAdd.setPrev(end);
        end.setNext(nodeToAdd);
      }
-     end = newNode;
+     end = nodeToAdd;
    }
    //If at start
    else if (index == 0) {
@@ -103,7 +103,7 @@ public class MyLinkedList{
        toReturn += ", ";
        current = current.getNext();
      }
-     else (i == size() - 1) {
+     else {
        toReturn += "]";
      }
    }
