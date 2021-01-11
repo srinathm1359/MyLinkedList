@@ -12,6 +12,18 @@ public class MyLinkedList{
    return size;
  }
 
+ //Getting node from index
+ private Node getNodeFromIndex(int index) {
+   if (index < 0 || index >= size()) {
+     throw new IndexOutOfBoundsException("Index needs to be between 0 and " + toString(size()) + ", inclusive!");
+   }
+   Node current = start;
+   for (int i = 0; i < index; i++) {
+     current = current.getNext();
+   }
+   return current;
+ }
+
  public boolean add(String value) {
    Node nodeToAdd = new Node(value);
    if (size() == 0) {
