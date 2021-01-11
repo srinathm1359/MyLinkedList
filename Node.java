@@ -7,9 +7,8 @@ public class Node {
     prev = null;
     next = null;
   }
- //write get/set methods for all three instance variables.
-
- //get methods
+  //write get/set methods for all three instance variables.
+  //get methods
   public String getData() {
     return data;
   }
@@ -18,5 +17,11 @@ public class Node {
   }
   public Node getNext() {
     return next;
+  }
+  //set methods
+  public String setData(String newData) {
+    String oldData = data;
+    data = newData;
+    return data;
   }
 }
