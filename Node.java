@@ -24,4 +24,9 @@ public class Node {
     data = newData;
     return data;
   }
+  public Node setPrev(Node prevNode) {
+    Node oldPrev = prev;
+    prev = prevNode;
+    return oldPrev;
+  }
 }
