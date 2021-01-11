@@ -11,8 +11,21 @@ public class MyLinkedList{
  public int size() {
    return size;
  }
+
+ public boolean add(String value) {
+   Node nodeToAdd = new Node(value);
+   if (size() == 0) {
+     start = nodeToAdd;
+   }
+   else {
+     nodeToAdd.setPrev(end);
+     end.setNext(nodeToAdd);
+   }
+   size++;
+   end = newNode;
+   return true;
+ }
  /*
- public boolean add(String value);
  public void add(int index, String value);
  public String get(int index);
  public String set(int index, String value);
