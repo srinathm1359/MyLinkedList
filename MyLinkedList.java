@@ -90,7 +90,24 @@ public class MyLinkedList{
    nodeToUpdate.setData(value);
    return value;
  }
- /*
- public String toString();
- */
+
+ public String toString() {
+   if (size() == 0) {
+     return "[]";
+   }
+   String toReturn = "[";
+   Node current = start;
+   for (int i = 0; i < size(); i++) {
+     toReturn += current.getData();
+     if (i < size() - 1) {
+       toReturn += ", ";
+       current = current.getNext();
+     }
+     else (i == size() - 1) {
+       toReturn += "]";
+     }
+   }
+   return toReturn;
+ }
+
 }
